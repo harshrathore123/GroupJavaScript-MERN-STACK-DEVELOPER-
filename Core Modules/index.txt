@@ -1,0 +1,2 @@
+Hello Node, This is my first file module
+This is appended text!
