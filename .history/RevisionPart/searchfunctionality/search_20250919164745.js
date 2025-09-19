@@ -1,0 +1,14 @@
+const http = require('http');
+
+const data = [
+    {id:1,name:"A",age:23,city:"Indore"},
+    {id:2,name:"B",age:24,city:"Bhopal"},
+    {id:3,name:"C",age:24,city:"Gorakpur"},
+    {id:4,name:"D",age:24,city:"Burhanpur"},
+    {id:5,name:"E",age:24,city:"Goa"},
+    {id:6,name:"F",age:24,city:"Singapore"},
+    {id:7,name:"G",age:24,city:"Dubai"},
+    {id:8,name:"H",age:24,city:"Gwalior"},
+    {id:9,name:"I",age:24,city:"Nasik"},
+    {id:10,name:"J",age:24,city:"Surat"},
+]
