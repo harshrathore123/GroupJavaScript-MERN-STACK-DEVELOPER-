@@ -29,29 +29,15 @@ const server = http.createServer((req,res)=>{
         //create query for database
         let alldata = 'select * from emp';
         let insert ='INSERT INTO emp (fname, mname, lname, addline1, addline2, dob, salary, doj, email, pwd, did, dol) values ("Raja", "MiddleName", "Jain", "Vijay Nagar", "Patnipura", "2000-12-25", 50000, "2025-09-19", "raja23gmail@example.com", "password123", 2, "2025-10-12")';
-        let deleted = 'delete from emp where eid=1';
-
-        db.query(deleted,(err,result)=>{
+        db.query(insert,(err,result)=>{
             if(err){
                 res.writeHead(500,{"content-type":"text/plain"});
                 res.end('Not found Data');
                 return;
             }
             else{
-                // res.writeHead(200,{"content-type":"application/json"});
-                // res.end(JSON.stringify({result:`This id is deleted`}));
-                let query = 'select * from emp where eid=1';
-                db.query(query,(err,result)=>{
-                   if(err){
-                res.writeHead(500,{"content-type":"text/plain"});
-                res.end('Not found Data');
-                return;
-                } 
-                else{
-                   res.writeHead(200,{"content-type":"application/json"});
-                res.end(JSON.stringify(result)); 
-                }
-                })
+                res.writeHead(200,{"content-type":"application/json"});
+                res.end(JSON.stringify(result));
             }
         })
     }

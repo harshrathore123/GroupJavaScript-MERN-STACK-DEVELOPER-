@@ -38,20 +38,20 @@ const server = http.createServer((req,res)=>{
                 return;
             }
             else{
-                // res.writeHead(200,{"content-type":"application/json"});
-                // res.end(JSON.stringify({result:`This id is deleted`}));
-                let query = 'select * from emp where eid=1';
-                db.query(query,(err,result)=>{
-                   if(err){
-                res.writeHead(500,{"content-type":"text/plain"});
-                res.end('Not found Data');
-                return;
-                } 
-                else{
-                   res.writeHead(200,{"content-type":"application/json"});
-                res.end(JSON.stringify(result)); 
-                }
-                })
+                res.writeHead(200,{"content-type":"application/json"});
+                res.end(JSON.stringify({result:`This id is deleted`}));
+                // let query = 'select * from emp where eid=37';
+                // db.query(query,(err,result)=>{
+                //    if(err){
+                // res.writeHead(500,{"content-type":"text/plain"});
+                // res.end('Not found Data');
+                // return;
+                // } 
+                // else{
+                //    res.writeHead(200,{"content-type":"application/json"});
+                // res.end(JSON.stringify(result)); 
+                // }
+                // })
             }
         })
     }
