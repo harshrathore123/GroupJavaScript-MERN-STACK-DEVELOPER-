@@ -1,0 +1,58 @@
+// node js and express js
+const express = require('express');
+const mysql = require('mysql2');
+const app = express();
+const Port = 3004;
+
+app.use(express.json());
+
+// Connection create
+const db = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"harsh@aA1234",
+    database:"wdr1365"
+});
+
+// Test connection
+db.connect((err)=>{
+    if(err){
+        console.log(`Error: ${errr}`);
+        return;
+    }
+    console.log(`Database Connected`);
+});
+
+// Read Data
+app.get('/',(req,res)=>{
+    let query = 'select * from emp';
+
+    // Create Query
+    db.query(query,(err,result)=>{
+        if(err){
+            res.json({message:"Not found database"});
+            return;
+        }
+        res.json(result);
+    })
+});
+
+// Read Selected Data
+app.get('/specificdata',(req,res)=>{
+    let query = 'select * from emp';
+
+    // Create Query
+    db.query(query,(err,result)=>{
+        if(err){
+            res.json({message:"Not found database"});
+            return;
+        }
+        res.json(result);
+    })
+});
+
+
+
+app.listen(Port,()=>{
+    console.log(`Established Connection on http://localhost:${Port}`);
+})
