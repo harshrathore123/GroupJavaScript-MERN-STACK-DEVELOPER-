@@ -43,7 +43,7 @@ const server = http.createServer((req,res)=>{
                 // res.writeHead(200,{"content-type":"application/json"});
                 // res.end(JSON.stringify({result:`This id is deleted`}));
                 let query = 'select * from emp where eid=?';
-                db.query(query,eid,(err,result)=>{
+                db.query(query,(err,result)=>{
                    if(err){
                 res.writeHead(500,{"content-type":"text/plain"});
                 res.end('Not found Data');
