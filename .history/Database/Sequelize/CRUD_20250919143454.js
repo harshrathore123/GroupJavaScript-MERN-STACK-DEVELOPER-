@@ -7,7 +7,7 @@ const sequelize = require("./db");
     // Sync the DB (creates table if not exists)
     await sequelize.sync();
 
-    // INSERT
+    // CREATE
     const newUser = await User.create({
       name: "Alice",
       email: "yoshita2105@gmail.com",
