@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('https://t3.ftcdn.net/jpg/08/68/51/04/360_F_868510427_vsvN67LV1zSmLMyXMOFG05tRCmTAj1xL.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+/* Top Menu */
+.maincont {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+.menu {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.login, .register {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.login:hover, .register:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+/* Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: start;
+  padding-top: 60px;
+}
+
+/* Hide both forms initially */
+.wrapper, .wrapper1 {
+  /* Display None for wrapper and wrapper1 (FOR LIGHTBOX) */
+  display: block;
+  width: 420px;
+  padding: 40px;
+  border-radius: 15px;
+  color: #fff;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.input_box, .input_box1 {
+  position: relative;
+}
+.input_box input, .input_box1 input {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  font-size: 16px;
+  padding: 10px 15px;
+  color: #fff;
+  margin: 10px 0;
+  outline: none;
+}
+.input_box i, .input_box1 i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.input_box input::placeholder,
+.input_box1 input::placeholder {
+  color: #ddd;
+}
+
+/* Remember me + forgot */
+.rememberme_checkbox, .rememberme_checkbox1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.rememberme_checkbox a,
+.rememberme_checkbox1 a,
+.register_link a,
+.register_link1 a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.rememberme_checkbox a:hover,
+.rememberme_checkbox1 a:hover,
+.register_link a:hover,
+.register_link1 a:hover {
+  color: #ffcc00;
+}
+
+
+.register_link1 a::after,
+.register_link a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+.register_link1 a:hover::after,
+.register_link a:hover::after {
+  width: 100%;
+  left: 0;
+  background: #ffcc00;
+}
+
+/* Buttons */
+.login_button, .login_button1 {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  width: 200px;
+}
+.login_button:hover, .login_button1:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.register_link, .register_link1 {
+  margin-top: 15px;
+  text-align: center;
+}
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    .close-btn:hover {
+      color: #ffcc00;
+    }
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

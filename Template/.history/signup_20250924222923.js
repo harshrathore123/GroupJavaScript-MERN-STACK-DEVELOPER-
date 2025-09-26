@@ -1,0 +1,56 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+const mysql = require('mysql2');
+
+const db = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"harsh@aA1234",
+    database:"Template"
+});
+
+db.connect((err)=>{
+    if(err){
+        console.log(`Connection is not connected`);
+    }
+    else{
+        console.log(`Connection is Connected Successfully`);
+    }
+})
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.static(path.join(__dirname,'public')));
+
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public','SignUp.html'));
+})
+
+app.post('/signup',(req,res)=>{
+    const {fullname,email,mobile,password} = req.body;
+    // res.send(`Fullname: ${fullname}, Email: ${email}, Mobile: ${mobile}, Password: ${password}`);
+    const insert_arr = [fullname,email,mobile,password];
+    const insert_query = 'insert into users (fullname,email,phone_number,password) values(?,?,?,?)';
+
+    // DB QUERY
+    db.query(insert_query,insert_arr,(err,result)=>{
+        if(err){
+            console.log(`Error: ${err}`);
+            return;
+        }
+        else{
+            console.log(`Data is Stored ${result.insertId}`);
+            res.redirect('/login');
+        }
+    })
+});   
+
+app.get('/login',(req,res)=>{
+            res.sendFile(path.join(__dirname,'public','Login.html'));
+
+})
+
+app.listen(3003,()=>{
+    console.log(`Connection Established on http://localhost:3003`);
+})
