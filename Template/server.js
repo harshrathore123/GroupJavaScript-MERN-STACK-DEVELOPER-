@@ -6,6 +6,7 @@ const path = require('path');
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname,'public')));
+app.use('/image',express.static(path.join(__dirname,'IMAGE')));
 
 app.get('/',(req,res)=>{
     //Render Home page
@@ -78,9 +79,13 @@ app.post('/login',(req,res)=>{
         }
 
         console.log("Credential Matched Successfully");
-        return res.redirect('/');
+        return res.redirect('/home');
     });
 });
+
+app.get('/home',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public','AfterLoginHome.html'));
+})
 
 app.listen(3000,()=>{
     console.log(`Connection established on http://localhost:3000`);

@@ -1,0 +1,10 @@
+I want to perform some task
+
+1. making card insert data
+2. all operation perform
+    a. create --Completed
+    b. insert --Completed
+    c. delete --Completed
+    d. alter  --Completed
+    e. update --Completed
+    f. where  --Completed
