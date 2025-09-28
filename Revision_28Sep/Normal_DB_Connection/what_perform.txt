@@ -1,6 +1,6 @@
 I want to perform some task
 
-1. making card insert data
+1. making card insert data --Completed at the time of react
 2. all operation perform
     a. create --Completed
     b. insert --Completed
