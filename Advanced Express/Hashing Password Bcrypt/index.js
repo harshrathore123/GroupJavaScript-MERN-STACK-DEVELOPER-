@@ -1,4 +1,5 @@
 const express = require('express');
+// bcrypt is the function of password hashing based on Blowfish Cipher
 const bcrypt = require('bcrypt');
 const app = express();
 app.use(express.json());
@@ -7,7 +8,7 @@ app.use(express.json());
 const salt = 11;
 
 //plain password
-const password = 'harsh@aA1234';
+const password = 'harh@aA1234';
 
 app.get('/',(req,res)=>{
     bcrypt.hash(password,salt,(err,hashpass)=>{
@@ -20,6 +21,21 @@ app.get('/',(req,res)=>{
         }
     })
 })
+
+app.get('/revhas',(req,res)=>{
+    bcrypt.hash(password,salt,(err,haspass)=>{
+        if(err) return res.end(`Error Occured`);
+        else{
+            bcrypt.compare(password,haspass,(err,ans)=>{
+                if(err) return res.end(`Error not comparing`);
+                else{
+                    res.send(`Comparision of ${password} is true with ${ans}`);
+                }
+            })
+        }
+    })
+})
+
 
 app.listen(8080,()=>{
     console.log(`Connection established on http://localhost:8080`);
