@@ -19,7 +19,6 @@ app.get('/',(req,res)=>{
 })
 
 // Last Searching data
-
 app.get('/search', (req, res) => {
     const { searching } = req.query; // use req.query, not req.body
 
@@ -38,7 +37,6 @@ app.get('/search', (req, res) => {
     res.json(results); // better than res.end(JSON.stringify(...))
 });
 
-
 //get only data if id,age and all int
 app.get('/:id',(req,res)=>{
     const id = parseInt(req.params.id);
@@ -48,7 +46,7 @@ app.get('/:id',(req,res)=>{
 })
 
 //get only data if name,city and all string
-app.get('/user/:name',(req,res)=>{
+app.get('/user/:named',(req,res)=>{
     const name = req.params.named;
     const username = data.find((u)=>u.named.toLowerCase().includes(name.toLowerCase()));
     if(!username) return res.end(`Not matched ${name}`)
