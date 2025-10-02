@@ -55,14 +55,10 @@ background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1
         </style>
     </head>
     <body>
-        <h1>Insert Data into Mysql</h1>
-        <form action="/api/insert_data" method="POST">
-            <input type="text" name="fname" placeholder="First Name"/>
-            <input type="text" name="lname" placeholder="Last Name"/>
-            <input type="text" name="city" placeholder="City"/>
-            <input type="number" name="age" placeholder="Age"/>
-            <input type="number" name="pincode" placeholder="Pincode"/>
-            <button>submit</button>
+        <h1>Delete Data into Mysql</h1>
+        <form action="/api/read_byID_data" method="POST">
+            <input type="number" name="id" placeholder="ID"/>
+            <button>Read All Data</button>
         </form>
     </body>
 </html>
