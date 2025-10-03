@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/Cart.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Shopping Cart</h2>
+
+        <form class="formdata" action="/menu" method="POST">
+            <div class="cards">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvC1pGhW7_BRwnGuBguLE99tfA0faYflekCA&s" alt="">
+                <h3>Thali</h3>
+                <span>120.00</span>
+
+                <!-- hidden fields to send to Express -->
+                 <input type="hidden" name="imageurl" value="">
+                <input type="hidden" name="productName" value="">
+                <input type="hidden" name="price" value="">
+
+                <button type="submit">Add to Cart</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="Cart.js"></script>
+</html>
+

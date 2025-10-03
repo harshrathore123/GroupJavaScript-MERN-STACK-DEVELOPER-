@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: aliceblue;
+    height: 100%;
+    position: relative;
+}
+.container h2{
+    position: absolute;
+    top: 80;
+    left: 127;
+}
+.cards{
+    border: 2px solid gainsboro;
+    border-radius: 20px;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 130;
+    left: 130;
+    padding: 20px;
+}
+.cards:hover{
+    background-color: gray;
+}
+.cards img{
+    width: 160px;
+    height: 130px;
+    border-radius: 50%;
+}
+.cards h3{
+    position: absolute;
+    top: 170;
+    left: 38;
+}
+.cards span{
+    position: absolute;
+    top: 196;
+    left: 38;
+}
+.cards button{
+    position: absolute;
+    top: 250;
+    left: 38;
+    width: 140px;
+    height: 30px;
+    cursor: pointer;
+}
