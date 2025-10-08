@@ -9,4 +9,5 @@ router.post('/login',control.PostLogin);
 router.get('/dashboard',control.Dashboard)
 router.get('/home',control.Home);
 router.get('/logout',control.Logout);
+
 module.exports = router;
